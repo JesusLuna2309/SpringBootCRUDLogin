@@ -12,13 +12,11 @@ Aplicación web desarrollada con **Spring Boot**, **MySQL** y **Thymeleaf** para
 
 **Login:**
 
-![Login](ruta/a/la/imagen/login.png)
+![Login](images/dfdd783a-a50d-474d-b740-32949c8c9444.png)
 
 **Listado de cuentas:**
 
-![Listado de cuentas](ruta/a/la/imagen/listado_cuentas.png)
-
-_(Reemplaza `ruta/a/la/imagen/` por la ruta real en tu repositorio.)_
+![Listado de cuentas](images/2cfe4ab1-5a1d-4c18-8c47-d60b86032ffb.png)
 
 ## 🚀 Tecnologías utilizadas
 
@@ -85,4 +83,14 @@ src/
 ## 📋 Estado del proyecto
 
 ✅ Proyecto funcional y en desarrollo activo.
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la MIT License.
+
+## ✉️ Contacto
+
+Proyecto desarrollado por **Jesús Luna Romero**  
+Repositorio: [https://github.com/JesusLuna2309/SpringBootCRUDLogin](https://github.com/JesusLuna2309/SpringBootCRUDLogin)
+
 
