@@ -1,78 +1,88 @@
 # GESTOR de Cuentas Bancarias 🏦
 
-Aplicación web desarrollada con Spring Boot para la gestión de cuentas bancarias y operaciones asociadas, incluyendo autenticación mediante login y cifrado de IBANs. Utiliza MySQL como base de datos.
+[![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)](https://www.java.com/)  
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0.0-6DB33F?logo=springboot)](https://spring.io/projects/spring-boot)  
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)  
+[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.0.15-005F0F?logo=thymeleaf&logoColor=white)](https://www.thymeleaf.org/)  
+[![Maven](https://img.shields.io/badge/Maven-3.9.0-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)  
 
-## 🚀 Características principales
+Aplicación web desarrollada con **Spring Boot**, **MySQL** y **Thymeleaf** para gestionar clientes y cuentas bancarias.
 
-- Login con autenticación de usuarios
-- Gestión de cuentas bancarias:
-  - Crear, modificar y eliminar cuentas
-  - Ver operaciones asociadas
-- Asociación de clientes a cuentas bancarias
-- Cifrado de IBANs para seguridad
-- Interfaz web amigable con Thymeleaf
-- Control de errores personalizado
-- Exportación de operaciones a CSV
+## 📸 Capturas de pantalla
 
-## 🔧 Tecnologías utilizadas
+**Login:**
 
-- **Backend**: Java, Spring Boot, Spring Data JPA, Spring Security
-- **Frontend**: HTML, CSS, Thymeleaf, Bootstrap
-- **Base de datos**: MySQL
-- **Otros**: Lombok, Apache Commons Codec
+![Login](ruta/a/la/imagen/login.png)
 
-## 🖼️ Capturas de pantalla
+**Listado de cuentas:**
 
-### Inicio de sesión
-![Login](./dfdd783a-a50d-474d-b740-32949c8c9444.png)
+![Listado de cuentas](ruta/a/la/imagen/listado_cuentas.png)
 
-### Vista de cuentas
-![Cuentas](./2cfe4ab1-5a1d-4c18-8c47-d60b86032ffb.png)
+_(Reemplaza `ruta/a/la/imagen/` por la ruta real en tu repositorio.)_
 
-## ⚙️ Instalación
+## 🚀 Tecnologías utilizadas
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/JesusLuna2309/SpringBootCRUDLogin.git
-   cd SpringBootCRUDLogin
-   ```
+- Java 17
+- Spring Boot
+- Spring Security
+- Thymeleaf
+- MySQL
+- Maven
 
-2. Crea una base de datos en MySQL llamada `gestor_banco` (o el nombre que configures en `application.properties`).
+## 🔗 Ruta de acceso
 
-3. Configura las credenciales de tu base de datos en el archivo `src/main/resources/application.properties`.
+La aplicación está disponible en:  
+[http://localhost:8080/](http://localhost:8080/)
 
-4. Ejecuta el proyecto desde tu IDE o con Maven:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
+## ⚙️ Configuración básica
 
-5. Accede a la aplicación en [http://localhost:8080](http://localhost:8080)
+Debes configurar tu archivo `application.properties` para la conexión a MySQL:
 
-## 🔐 Usuario de prueba
-
-- **Usuario**: `admin`
-- **Contraseña**: `admin`
-
-## 📂 Estructura del proyecto
-
-```
-SpringBootCRUDLogin
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.example.gestorbanco
-│   │   └── resources
-│   │       ├── static
-│   │       ├── templates
-│   │       └── application.properties
-└── pom.xml
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/gestor_cuentas
+spring.datasource.username=usuario
+spring.datasource.password=contraseña
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.open-in-view=true
+jwt.secret-key=SecretKey
 ```
 
-## 📄 Licencia
+> **Importante:** No subir datos sensibles (contraseñas reales).
 
-Este proyecto está licenciado bajo la MIT License.
+## 📂 Clonar el proyecto
 
-## ✉️ Contacto
+```bash
+git clone https://github.com/JesusLuna2309/SpringBootCRUDLogin.git
+```
 
-Proyecto desarrollado por **Jesús Luna Romero**  
-Repositorio: [https://github.com/JesusLuna2309/SpringBootCRUDLogin](https://github.com/JesusLuna2309/SpringBootCRUDLogin)
+## 🛠️ Funcionalidades
+
+- Gestión completa (CRUD) de **clientes** y **cuentas bancarias**.  
+- Relación **muchos a muchos** entre clientes y cuentas.  
+- Cifrado de **IBAN** y **NIF** en las URLs.  
+- Autenticación segura con **JWT** almacenado en **cookies HttpOnly**.  
+- Ordenación de listados **insensible a tildes**.  
+- Exportación de operaciones a **PDF**.  
+- Manejo global de errores con vistas personalizadas.
+- Exportación de datos .csv (próximamente).
+
+## 🗂️ Estructura del Proyecto
+
+src/
+ └── main/
+     ├── java/com/tarea6_luna_romero_jesus_psphlc/
+     │    ├── config/          # Seguridad y JWT
+     │    ├── controladores/   # Endpoints y vistas
+     │    ├── entidades/       # Clases JPA
+     │    ├── excepciones/     # Manejador global
+     │    ├── jwt/             # Filtro y servicio JWT
+     │    └── servicios/       # Lógica de negocio
+     └── resources/
+          ├── static/          # CSS, JS, imágenes
+          ├── templates/       # Thymeleaf
+          └── application.properties
+
+## 📋 Estado del proyecto
+
+✅ Proyecto funcional y en desarrollo activo.
+
