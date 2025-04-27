@@ -12,11 +12,11 @@ Aplicación web desarrollada con **Spring Boot**, **MySQL** y **Thymeleaf** para
 
 **Login:**
 
-![Login](images/dfdd783a-a50d-474d-b740-32949c8c9444.png)
+![Login](Images/dfdd783a-a50d-474d-b740-32949c8c9444.png)
 
 **Listado de cuentas:**
 
-![Listado de cuentas](images/2cfe4ab1-5a1d-4c18-8c47-d60b86032ffb.png)
+![Listado de cuentas](Images/2cfe4ab1-5a1d-4c18-8c47-d60b86032ffb.png)
 
 ## 🚀 Tecnologías utilizadas
 
