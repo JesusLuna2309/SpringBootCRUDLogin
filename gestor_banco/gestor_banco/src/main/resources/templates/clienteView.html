@@ -1,0 +1,293 @@
+<html>
+   <head>
+      <title>Gestor | Clientes</title>
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+         crossorigin="anonymous" />
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+         crossorigin="anonymous"></script>
+      <link rel="icon"
+         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👥</text></svg>" />
+      <style>
+         .b-example-divider {
+         height: 3rem;
+         background-color: rgba(0, 0, 0, 0.1);
+         border: solid rgba(0, 0, 0, 0.15);
+         border-width: 1px 0;
+         box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em
+         0.5em rgba(0, 0, 0, 0.15);
+         }
+         .form-control-dark {
+         color: #fff;
+         background-color: var(--bs-dark);
+         border-color: var(--bs-gray);
+         }
+         .form-control-dark:focus {
+         color: #fff;
+         background-color: var(--bs-dark);
+         border-color: #fff;
+         box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+         }
+         .bi {
+         vertical-align: -0.125em;
+         fill: currentColor;
+         }
+         .text-small {
+         font-size: 85%;
+         }
+         .dropdown-toggle {
+         outline: 0;
+         }
+         body {
+         scrollbar-gutter: stable;
+         overflow: auto
+         }
+         .disabled {
+         pointer-events: none;
+         opacity: 0.6;
+         }
+      </style>
+   </head>
+   <body>
+      <main>
+         <header>
+            <!-- common header -->
+            <div class="px-3 py-2 bg-dark text-white">
+               <div class="container">
+                  <div
+                     class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                     <a th:href="@{index}"
+                        class="d-flex text-white text-decoration-none">
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                           fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
+                           <path
+                              d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
+                           <path
+                              d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
+                        </svg>
+                     </a>
+                     <a th:href="@{index}"
+                        class="d-flex ms-2 me-lg-auto text-white text-decoration-none">
+                     Gestor de banco </a>
+                     <ul
+                        class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                           <a th:href="@{index}" class="nav-link text-white">
+                              <svg
+                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 fill="currentColor"
+                                 class="bi bi-house-door d-block mx-auto mb-1"
+                                 viewBox="0 0 16 16">
+                                 <path
+                                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+                              </svg>
+                              Inicio
+                           </a>
+                        </li>
+                        <li class="disabled">
+                           <a th:href="@{/clientesView}"
+                              class="nav-link text-secondary">
+                              <svg
+                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 fill="currentColor" class="bi bi-people d-block mx-auto mb-1"
+                                 viewBox="0 0 16 16">
+                                 <path
+                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                              </svg>
+                              Cliente
+                           </a>
+                        </li>
+                        <li>
+                           <a th:href="@{/cuentasView}" class="nav-link text-white">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 fill="currentColor" class="bi bi-archive d-block mx-auto mb-1"
+                                 viewBox="0 0 16 16">
+                                 <path
+                                    d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                              </svg>
+                              Cuentas
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!-- end of common header -->
+            <!-- start of specific header -->
+            <div class="px-3 py-2 border-bottom mb-3">
+               <div class="container d-flex flex-wrap justify-content-center">
+                  <div class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto mt-1">
+                     <b class="text-black">Clientes</b>
+                  </div>
+                  <div class="text-end">
+                     <a th:href="@{/newClientesView}">
+                        <button type="button" class="btn btn-success mx-auto me-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-plus-circle"
+                              viewBox="0 0 16 16">
+                              <path
+                                 d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                              <path
+                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                           </svg>
+                           Añadir cliente
+                        </button>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <!-- end of specific header -->
+         </header>
+         <div class="ms-5 me-5">
+            <!-- start of filtros -->
+            <div class="accordion" id="filtrosAccordion">
+               <div class="accordion-item">
+                  <h2 class="accordion-header" id="filtrosOpener">
+                     <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#filtrosContent"
+                        aria-expanded="true" aria-controls="filtrosContent">
+                     Búsqueda</button>
+                  </h2>
+                  <div id="filtrosContent" class="accordion-collapse collapse"
+                     aria-labelledby="filtrosOpener" data-bs-parent="#filtrosAccordion">
+                     <div class="accordion-body">
+                        <form th:action="@{/actSearchCliente}" method="GET">
+                           <div class="form-group form-floating mb-3">
+                              <input type="text" class="form-control" id="dni" name="dni"
+                                 placeholder="DNI" /> <label for="dni">DNI</label>
+                           </div>
+                           <div class="form-group form-floating mb-3">
+                              <input type="text" class="form-control" id="nombre"
+                                 name="nombre" placeholder="Pepe" /> <label for="nombre">Nombre</label>
+                           </div>
+                           <div class="form-group form-floating mb-3">
+                              <input type="text" class="form-control" id="apellido"
+                                 name="apellido" placeholder="García" /> <label for="apellido">Apellido</label>
+                           </div>
+                           <div class="form-group form-floating mb-3">
+                              <input type="text" class="form-control" id="email" name="email"
+                                 placeholder="ejemplo@gmail.com" /> <label for="email">Email</label>
+                           </div>
+                           <div class="form-group form-floating mb-3">
+                              <input type="text" class="form-control" id="numeroContacto"
+                                 name="numeroContacto" placeholder="639458675" /> <label
+                                 for="apellido">Numero de contacto</label>
+                           </div>
+                           <div class="d-flex justify-content-between align-items-center">
+                              <!-- Sección de ordenamiento alineada a la izquierda -->
+                              <div class="form-group">
+                                 <!-- Sección de ordenamiento alineada a la izquierda -->
+                                 <label for="ordenarPor">Ordenar por:</label> 
+                                 <select
+                                    name="ordenarPor" id="ordenarPor" class="form-control">
+                                    <option value="">Sin orden</option>
+                                    <option value="apellidoAscendente">Apellido ↑</option>
+                                    <option value="apellidoDescendente">Apellido ↓</option>
+                                    <option value="fechaAscendente">Fecha ↑</option>
+                                    <option value="fechaDescendente">Fecha ↓</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="d-flex flex-row-reverse bd-highlight">
+                              <button type="submit" name="btnFiltrarClientes"
+                                 class="btn btn-dark text-white">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor"
+                                    class="bi bi-search mx-auto me-1" viewBox="0 0 16 16">
+                                    <path
+                                       d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                 </svg>
+                                 Buscar
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end of filtros -->
+            <hr />
+            <!-- start of tabla -->
+            <table class="table table-striped table-hover table-bordered">
+               <thead>
+                  <tr>
+                     <th scope="col">DNI</th>
+                     <th scope="col">Nombre</th>
+                     <th scope="col">Apellido</th>
+                     <th scope="col">Año de nacimiento</th>
+                     <th scope="col">Direccion</th>
+                     <th scope="col">Email</th>
+                     <th scope="col">Numero de contacto</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <th:block th:each="cliente : ${clienteListView}">
+                     <tr>
+                        <td th:text="${cliente.id}" hidden="true"></td>
+                        <td th:text="${cliente.nif}" />
+                        <td th:text="${cliente.nombre}" />
+                        <td th:text="${cliente.apellidos}" />
+                        <td th:text="${cliente.anyoNacimiento}" width="10" height="10" />
+                        <td th:text="${cliente.direccion}" />
+                        <td th:text="${cliente.email}" />
+                        <td th:text="${cliente.numeroContacto}" />
+                        <td>
+                           <a style="text-decoration: none;"
+                              th:href="@{/showClienteCuentas(clienteNif=${nifCifrados[cliente.nif]})}">
+                              <button type="button"
+                                 class="btn btn-secondary position-relative mt-2">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-archive mx-auto me-1"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                       d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                                 </svg>
+                                 Ver cuentas <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
+                                    th:text="${cliente.misCuentas.size()}"></span>
+                              </button>
+                           </a>
+                           <a th:href="@{/showClienteMod(clienteDni=${nifCifrados[cliente.nif]})}">
+                              <button type="button" class="btn btn-primary ms-3 mt-2"
+                                 th:value="${cliente.nif}">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-pencil mx-auto me-1"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                       d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                                 </svg>
+                                 Modificar
+                              </button>
+                           </a>
+                           <a th:href="@{/actDropCliente(clienteId=${cliente.nif})}">
+                              <button type="submit" id="btnDropCliente" name="clienteId"
+                                 th:value="${cliente.nif}" class="btn btn-danger ms-3 mt-2">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-trash mx-auto me-1"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                       d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                       d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                 </svg>
+                                 Eliminar
+                              </button>
+                           </a>
+                        </td>
+                     </tr>
+                  </th:block>
+               </tbody>
+            </table>
+            <!-- end of tabla -->
+            <!-- start of footer -->
+            <footer></footer>
+            <!-- end of footer -->
+         </div>
+      </main>
+   </body>
+</html>
